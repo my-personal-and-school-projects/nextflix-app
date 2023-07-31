@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Header from "../components/Header";
 import { Movie } from "../typings";
 import Head from "next/head";
+import { GetServerSideProps } from "next";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -16,7 +17,17 @@ interface Props {
   //products: Product[];
 }
 
-const Home = ({ netflixOriginals }: Props) => {
+const Home = ({
+  netflixOriginals,
+  actionMovies,
+  comedyMovies,
+  documentaries,
+  horrorMovies,
+  romanceMovies,
+  topRated,
+  trendingNow,
+}: Props) => {
+  console.log(netflixOriginals);
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to[#105100] lg:[140vh]">
       <Head>
@@ -26,7 +37,7 @@ const Home = ({ netflixOriginals }: Props) => {
       <Header />
 
       <main>
-        <Banner netFlixOriginals={netflixOriginals} />
+        <Banner netflixOriginals={netflixOriginals} />
         <section></section>
       </main>
     </div>
@@ -34,7 +45,7 @@ const Home = ({ netflixOriginals }: Props) => {
 };
 export default Home;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const [
     netflixOriginals,
     trendingNow,
@@ -65,7 +76,6 @@ export const getServerSideProps = async () => {
       horrorMovies: horrorMovies.results,
       romanceMovies: romanceMovies.results,
       documentaries: documentaries.results,
-      //products,
     },
   };
 };
