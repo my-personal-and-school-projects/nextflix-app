@@ -1,6 +1,7 @@
 import requests from "../utils/requests";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
+import Row from "../components/Row";
 import { Movie } from "../typings";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
@@ -36,9 +37,18 @@ const Home = ({
       </Head>
       <Header />
 
-      <main>
+      <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section></section>
+        <section className="md:space-y-24">
+          <Row title="Trending now" movies={trendingNow}></Row>
+          <Row title="Top Rated" movies={topRated}></Row>
+          <Row title=" Action Thrillers" movies={actionMovies}></Row>
+          {/*My List Component*/}
+          <Row title="Comedies" movies={comedyMovies}></Row>
+          <Row title="Scary Movies" movies={horrorMovies}></Row>
+          <Row title="Romance Movies" movies={romanceMovies}></Row>
+          <Row title="Documentaries" movies={documentaries}></Row>
+        </section>
       </main>
     </div>
   );
