@@ -30,7 +30,7 @@ const Home = ({
 }: Props) => {
   console.log(netflixOriginals);
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to[#105100] lg:[140vh]">
+    <div className="relative h-screen bg-gradient-to-b lg:[140vh]">
       <Head>
         <title> home - Netflix </title>
         <link rel="icon" href="/favicon.ico" />
@@ -39,7 +39,7 @@ const Home = ({
 
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section className="md:space-y-24">
+        <section className="md:space-y-14">
           <Row title="Trending now" movies={trendingNow}></Row>
           <Row title="Top Rated" movies={topRated}></Row>
           <Row title=" Action Thrillers" movies={actionMovies}></Row>
