@@ -5,6 +5,7 @@ import Row from "../components/Row";
 import { Movie } from "../typings";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
+import useAuth from "@/hooks/useAuth";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -28,11 +29,14 @@ const Home = ({
   topRated,
   trendingNow,
 }: Props) => {
-  console.log(netflixOriginals);
+  const { loading, user } = useAuth();
+
+  if (loading) return null;
+
   return (
     <div className="relative h-screen bg-gradient-to-b lg:[140vh]">
       <Head>
-        <title> home - Netflix </title>
+        <title> home - Nextflix </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
