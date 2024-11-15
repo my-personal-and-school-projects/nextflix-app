@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 
-const firebaseConfig = {
+/* const firebaseConfig = {
   apiKey: "AIzaSyDbaq7U4sF3qPVqK_ItVg-7tyPLTsW-ygc",
   authDomain: "nextflix-app-5af2d.firebaseapp.com",
   projectId: "nextflix-app-5af2d",
@@ -16,7 +16,7 @@ const firebaseConfig = {
   messagingSenderId: "1043594517725",
   appId: "1:1043594517725:web:7b32bd517dac2572900f34"
 };
-
+ */
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
